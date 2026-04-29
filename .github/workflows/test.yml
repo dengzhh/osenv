@@ -1,0 +1,26 @@
+name: GitHub Actions Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print environment
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"
+          date
+
+      - name: Test passed
+        run: echo "All checks passed!"
