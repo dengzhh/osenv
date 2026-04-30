@@ -1,5 +1,7 @@
 name: Claude Code
 
+# ⚠️ 已禁用 - 使用本地 webhook 方案代替
+# 原因：使用智谱 API 代理，官方 claude-code-action 不兼容
 on:
   issues:
     types: [opened, labeled]
@@ -18,14 +20,9 @@ permissions:
 
 jobs:
   claude:
-    if: |
-      (github.event_name == 'issues' && (
-        contains(github.event.issue.labels.*.name, 'claude') ||
-        contains(github.event.issue.body, '@claude')
-      )) ||
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request') ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude'))
+    # ⚠️ 已禁用 - 使用本地 webhook 方案代替
+    # 原因：使用智谱 API 代理，官方 claude-code-action 不兼容
+    if: false
     runs-on: ubuntu-latest
     env:
       ANTHROPIC_BASE_URL: "https://open.bigmodel.cn/api/anthropic"
