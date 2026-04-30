@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.log
+
+# Sensitive configuration - never commit actual values
+# webhook/config.py 现在从环境变量读取，可以安全提交
+# 如有本地自定义配置，请使用 .env 文件
+
+# Environment files (may contain secrets)
+.env
+.env.local
+
+# Logs
+*.log
+/tmp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Claude Code
+.claude/
+.remember/
