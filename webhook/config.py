@@ -32,3 +32,6 @@ TRIGGER_MENTION = os.environ.get("TRIGGER_MENTION", "@claude")
 
 # 代理设置
 HTTP_PROXY = os.environ.get("http_proxy", os.environ.get("HTTP_PROXY", ""))
+
+# 标签描述（用于创建 GitHub Label）
+LABEL_DESC = os.environ.get("LABEL_DESC", "触发 Claude Code 自动处理")
